@@ -1,0 +1,49 @@
+name: Ошибка в тексте или переводе
+description: Опечатка, неточный перевод или ошибка в английском фрагменте · Text or translation error
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо! Пожалуйста, **не пишите спойлеры в заголовке** — его видят все.
+        Номер серии виден на обороте карточки, если раскрыть «перевод фрагмента»: «Серия 3 · 10/17».
+  - type: input
+    id: episode
+    attributes:
+      label: Серия и номер карточки
+      placeholder: "Серия 3 · 10/17"
+    validations:
+      required: true
+  - type: input
+    id: word
+    attributes:
+      label: Слово карточки
+      placeholder: waiter
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Где ошибка
+      options:
+        - Английский фрагмент
+        - Перевод слова
+        - Перевод фрагмента
+        - Рисунок или сцена
+        - Книга (сайт)
+        - Другое
+    validations:
+      required: true
+  - type: textarea
+    id: now
+    attributes:
+      label: Как сейчас
+      description: Скопируйте текст с ошибкой.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Как должно быть или что не так
+    validations:
+      required: true

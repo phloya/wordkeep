@@ -1,0 +1,30 @@
+name: Проблема с установкой или видом
+description: Колода не импортируется, карточки выглядят не так, не работает озвучка · Install or display problem
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: app
+    attributes:
+      label: Приложение
+      options:
+        - Anki на компьютере (Windows)
+        - Anki на компьютере (macOS)
+        - Anki на компьютере (Linux)
+        - AnkiDroid (Android)
+        - AnkiMobile (iPhone, iPad)
+        - AnkiWeb (браузер)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Версия приложения
+      description: Обычно её видно в пункте меню «О программе» (About).
+      placeholder: "25.09"
+  - type: textarea
+    id: what
+    attributes:
+      label: Что происходит
+      description: Что вы делали, что ожидали увидеть и что получилось. Приложите скриншот, если можно.
+    validations:
+      required: true

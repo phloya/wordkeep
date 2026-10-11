@@ -52,7 +52,7 @@ The files are in [`docs/template/`](./template/):
 What `style.css` does not contain:
 
 - **Scenes.** The deck's style also has 15 rules `.scene-<place> { background-image: url("data:image/svg+xml,…") }`, with the scene SVGs embedded in the CSS. They are left out of the file in `docs` so it stays readable.
-- **Word pictures.** These are 900 media files named `tw_<note id>_<hash>.svg`.
+- **Word pictures.** These are 3,057 media files (almost every word has one) named `tw_<note id>_<hash>.svg`.
 
 **Text-to-speech.** The front uses `{{tts en_US:Word}}` and the back `{{tts en_US:Example}}`, with the system voice. The document label is not read aloud (see `data-label` above). AnkiWeb has no TTS and prints the tag's content as text, so that text is hidden by `.tts > :not(.replay-button):not(a)`.
 

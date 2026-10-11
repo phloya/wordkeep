@@ -65,7 +65,7 @@ Words per level: A1 775, A2 876, B1 813, B2 596.
 
 ### Pictures for memory
 
-**900 word pictures and 15 place scenes** in one style, with day and night themes. A word with a picture is easier to remember.
+**Pictures for 3,057 of the 3,060 words and 15 place scenes** in one style, with day and night themes. A word with a picture is easier to remember.
 
 <p align="center">
   <img src="./assets/readme/pictures.png" width="100%" alt="20 word pictures: umbrella, lemon, bicycle, listen, ticket, wait and more">
@@ -158,5 +158,5 @@ More recipes: [docs/customize.en.md](./docs/customize.en.md). How the deck is bu
 
 - Texts, translations, pictures and design: [CC BY-NC-SA 4.0](./LICENSE.md) — share and adapt non-commercially, with attribution, under the same license.
 - Oxford 3000™ is a word list © Oxford University Press. This project is not affiliated with OUP and uses only the words; all texts are original.
-- Found a mistake in a text or translation? Open an [issue](../../issues).
+- Found a mistake in a text or translation? Fill in a [short form](../../issues/new?template=translation-error.yml). Other ways to help: [CONTRIBUTING.md](./CONTRIBUTING.md#in-english).
 - Author: [phloya](https://github.com/phloya).
