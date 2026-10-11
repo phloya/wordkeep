@@ -9,7 +9,7 @@ In a usual deck, words are separate "word — translation" pairs with random exa
 > **Translations are in Russian.** The deck is made for Russian speakers.
 
 <p align="center">
-  <a href="https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg"><b>Download the deck</b></a> (.apkg, 5 MB) → open the file in Anki. Details: <a href="#how-to-install">How to install</a>.
+  <a href="https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg"><b>Download the deck</b></a> (.apkg, 5 MB, newest version) → open the file in Anki. Details: <a href="#how-to-install">How to install</a>.
 </p>
 
 <p align="center">
@@ -81,13 +81,27 @@ Words per level: A1 775, A2 876, B1 813, B2 596.
 
 ## How to install
 
-1. Install Anki: [desktop](https://apps.ankiweb.net) and [Android](https://play.google.com/store/apps/details?id=com.ichi2.anki) are free, [iPhone and iPad](https://apps.apple.com/app/ankimobile-flashcards/id373493387) is paid.
-2. Download [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) from [Releases](../../releases/latest).
+1. Install Anki: [desktop](https://apps.ankiweb.net) and [Android](https://play.google.com/store/apps/details?id=com.ichi2.anki) are free, [iPhone and iPad](https://apps.apple.com/app/ankimobile-flashcards/id373493387) is paid. It has to be Anki itself: AnkiPro and AnkiApp are different apps, and the deck was not tested in them.
+2. Download [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) from [Releases](../../releases/latest). The link always gives the newest version; you do not need older ones.
 3. Open the file in Anki:
    - **Desktop:** double-click the file or choose File → Import. Enable *Import any deck presets* to get 15 new cards a day.
    - **Android:** open the file and choose AnkiDroid.
    - **iPhone and iPad:** open the file in the Files app, tap Share and choose AnkiMobile.
 4. Study in order: new cards follow the story, do not shuffle them.
+
+## How to update
+
+New versions come out in [Releases](../../releases); each one says what changed. You do not need the versions in between: go straight to the newest one.
+
+1. If you study on several devices, sync them first.
+2. Download the new [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) and open it in Anki, as when installing.
+
+Your progress stays, no duplicates appear, and new texts and pictures are added. Your number of new cards a day stays too.
+
+- Installed the deck before 10 October 2026 (versions 1.0–1.1)? The story has been retold since then, and an update keeps the old order of new cards. Better delete the deck and install the newest version from scratch.
+- Cards you edited yourself are left alone: your edit stays, but the release's changes to that card do not arrive. The same goes for the card design if you changed the styling.
+- You can make a backup before updating: File → Create Backup.
+- To hear about new versions, click Watch → Custom → Releases at the top of the page (needs a GitHub account).
 
 ## The book
 
@@ -148,6 +162,10 @@ More recipes: [docs/customize.en.md](./docs/customize.en.md). How the deck is bu
 | Good (3) | you remembered; the usual answer |
 | Easy (4) | you knew it at once |
 
+**A new version is out — will I lose my progress?** No: import the new file over the old one, see [How to update](#how-to-update).
+
+**How do I start over?** Delete the deck (gear → Delete) and import the file again. Your progress starts from zero.
+
 **It shows 20, not 15?** "Import any deck presets" was off during import. Change the number by hand — see [Settings](#settings).
 
 **Does it work offline?** Yes. Without a connection the Google Fonts do not load and the cards fall back to system fonts.
@@ -157,6 +175,8 @@ More recipes: [docs/customize.en.md](./docs/customize.en.md). How the deck is bu
 ## License and links
 
 - Texts, translations, pictures and design: [CC BY-NC-SA 4.0](./LICENSE.md) — share and adapt non-commercially, with attribution, under the same license.
+- The deck is free. This repository is its official source.
 - Oxford 3000™ is a word list © Oxford University Press. This project is not affiliated with OUP and uses only the words; all texts are original.
+- Card fonts: Literata and PT Mono from Google Fonts, SIL Open Font License.
 - Found a mistake in a text or translation? Fill in a [short form](../../issues/new?template=translation-error.yml). Other ways to help: [CONTRIBUTING.md](./CONTRIBUTING.md#in-english).
 - Author: [phloya](https://github.com/phloya).
