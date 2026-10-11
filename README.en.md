@@ -4,23 +4,26 @@
 
 <p align="center"><a href="./README.md">Русский</a> · <b>English</b></p>
 
-**An Anki deck in which all 3,060 Oxford 3000 words (A1–B2) form one mystery novel.** Learn 15 new words a day and read the story episode by episode.
+In a usual deck, words are separate "word — translation" pairs with random examples. **In Wordkeep, all 3,060 Oxford 3000 words (A1–B2) form one mystery novel.** Learn 15 new words a day and read the story episode by episode.
 
 > **Translations are in Russian.** The deck is made for Russian speakers.
+
+<p align="center">
+  <a href="https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg"><b>Download the deck</b></a> (.apkg, 5 MB) → open the file in Anki. Details: <a href="#how-to-install">How to install</a>.
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme/card-dark.gif">
+    <img src="./assets/readme/card-light.gif" width="320" alt="The real card waiter on a phone: the word in a story fragment, then the answer with the translation, a picture and a scene, then the translation of the whole fragment">
+  </picture>
+</p>
 
 > Tidewell is a rainy port city where people forget their own lives. So everybody writes cards. A grey box, Item 1681, arrives at Lost Property with someone's life inside and a note: "Do not give this back to me. Even if I ask."
 
 <p align="center">
-  <a href="#how-to-install"><b>Download the deck</b></a> · <a href="#whats-inside">What's inside</a> · <a href="#the-book">The book</a> · <a href="#settings">Settings</a> · <a href="#faq">FAQ</a>
+  <a href="#whats-inside">What's inside</a> · <a href="#how-to-install">Install</a> · <a href="#the-book">The book</a> · <a href="#settings">Settings</a> · <a href="#faq">FAQ</a>
 </p>
-
-## What it looks like
-
-<p align="center">
-  <img src="./assets/readme/proof.png" width="100%" alt="The back of the real card waiter: on a desktop in the day theme and on a phone in the night theme with the fragment translation opened">
-</p>
-
-A screenshot from Anki: a card from episode 3 on a desktop (day) and on a phone (night). More screenshots are in [`assets/readme/cards`](./assets/readme/cards).
 
 ## What's inside
 
