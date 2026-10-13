@@ -82,7 +82,7 @@ Words per level: A1 775, A2 876, B1 813, B2 596.
 ## How to install
 
 1. Install Anki: [desktop](https://apps.ankiweb.net) and [Android](https://play.google.com/store/apps/details?id=com.ichi2.anki) are free, [iPhone and iPad](https://apps.apple.com/app/ankimobile-flashcards/id373493387) is paid. It has to be Anki itself: AnkiPro and AnkiApp are different apps, and the deck was not tested in them.
-2. Download [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) from [Releases](../../releases/latest). The link always gives the newest version; you do not need older ones.
+2. Download [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) from [Releases](../../releases/latest). The link always gives the newest version; you do not need older ones. The same deck is also on [AnkiWeb Shared Decks](https://ankiweb.net/shared/info/261868786).
 3. Open the file in Anki:
    - **Desktop:** double-click the file or choose File → Import. Enable *Import any deck presets* to get 15 new cards a day.
    - **Android:** open the file and choose AnkiDroid.

@@ -80,7 +80,7 @@
 ## Как установить
 
 1. Поставь Anki: [на компьютер](https://apps.ankiweb.net) и [на Android](https://play.google.com/store/apps/details?id=com.ichi2.anki) — бесплатно, [на iPhone и iPad](https://apps.apple.com/app/ankimobile-flashcards/id373493387) — платно. Нужна именно Anki: AnkiPro и AnkiApp — другие приложения, колода в них не проверялась.
-2. Скачай [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) из [Releases](../../releases/latest). Ссылка всегда ведёт на самую новую версию, старые ставить не нужно.
+2. Скачай [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) из [Releases](../../releases/latest). Ссылка всегда ведёт на самую новую версию, старые ставить не нужно. Та же колода есть в [каталоге AnkiWeb](https://ankiweb.net/shared/info/261868786).
 3. Открой файл в Anki:
    - **Компьютер:** дважды щёлкни по файлу или выбери «Файл → Импортировать» (File → Import). Включи галочку «Импортировать конфигурации колод» (Import any deck presets) — будет 15 новых карточек в день.
    - **Android:** открой файл и выбери AnkiDroid.
