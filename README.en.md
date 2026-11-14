@@ -4,7 +4,7 @@
 
 <p align="center"><a href="./README.md">Русский</a> · <b>English</b></p>
 
-In a usual deck, words are separate "word — translation" pairs with random examples. **In Wordkeep, all 3,060 Oxford 3000 words (A1–B2) form one mystery novel.** Learn 15 new words a day and read the story episode by episode.
+In a usual deck, words are separate "word — translation" pairs with random examples. **In Wordkeep, all 3,060 Oxford 3000 words (A1–B2) form one mystery novel.** The card shows just the word, and the story comes in scenes: every 3–6 words add up to a short piece of text. Learn 15 new words a day and read the novel scene by scene.
 
 > **Translations are in Russian.** The deck is made for Russian speakers.
 
@@ -14,8 +14,8 @@ In a usual deck, words are separate "word — translation" pairs with random exa
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme/card-dark.gif">
-    <img src="./assets/readme/card-light.gif" width="320" alt="The real card waiter on a phone: the word in a story fragment, then the answer with the translation, a picture and a scene, then the translation of the whole fragment">
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/readme/card-dark.png">
+    <img src="./assets/readme/card-light.png" width="320" alt="A real card on a phone: only the word on the front, then the back with the translation, the word's picture and the place picture, then the last card of a scene with the story scene and its «Ранее» recap line, then the scene's translation">
   </picture>
 </p>
 
@@ -27,20 +27,23 @@ In a usual deck, words are separate "word — translation" pairs with random exa
 
 ## What's inside
 
-### Every card is a fragment of one story
+### Every word is a piece of one story
 
-**3,060 words form 179 episodes of 17 words.** Each fragment is styled as a document of the city: a Lost Property log, a police report, a receipt, a night radio show. The plot: Ida from Lost Property tries to find out whose life is in Box 1681.
+**3,060 words form 179 episodes of 17 words and 734 scenes.** Each word has its own story fragment, styled as a document of the city: a Lost Property log, a police report, a receipt, a night radio show. The fragments of 3–6 neighbouring words make a scene — about 90 words of text, 140 at most. The plot: Ida from Lost Property tries to find out whose life is in Box 1681.
 
 <p align="center">
-  <img src="./assets/readme/anatomy.png" width="100%" alt="Front and back of the card waiter with marks 1 to 6">
+  <img src="./assets/readme/anatomy.png" width="100%" alt="The front of a card, the back of an ordinary card and the back of a scene card, with marks 1 to 9">
 </p>
 
-1. The word in its fragment — try to understand it first.
-2. The document label.
-3. The translation, right under the word.
-4. A picture of the word.
-5. A scene of the place where it happens.
-6. The fragment translation — on tap.
+1. The word — nothing else on the front except the part of speech, the level and the audio.
+2. The translation, right under the word.
+3. A picture of the word.
+4. A place picture: where it happens.
+5. «контекст» (context) — the word's own story fragment, folded.
+6. The story scene — on the last card of a group: the fragments of the last 3–6 words as one text.
+7. «Ранее» (Previously) — a one-line reminder of what came before.
+8. «Кто здесь» (Who's here) — the people in the scene, on tap.
+9. «перевод» (translation) — the Russian text of the scene, on tap.
 
 ### The story brings words back
 
@@ -55,7 +58,7 @@ In a usual deck, words are separate "word — translation" pairs with random exa
 
 ### The level grows with the story
 
-**The first 30 episodes use only A1 and A2**, so you can start from zero. Then B1 joins; Part 2 (episodes 144–178) is B2.
+**The first 30 episodes teach only A1 and A2 words.** But the scenes are real English sentences, so you need to read simple present-tense sentences already. A true beginner will struggle. Then B1 joins; Part 2 (episodes 144–178) is B2.
 
 <p align="center">
   <img src="./assets/readme/levels-en.svg" width="100%" alt="Chart: share of A1, A2, B1 and B2 words across the episodes; in Part 1 A1 falls and B1 rises, Part 2 is all B2">
@@ -65,17 +68,17 @@ Words per level: A1 775, A2 876, B1 813, B2 596.
 
 ### Pictures for memory
 
-**Pictures for 3,057 of the 3,060 words and 15 place scenes** in one style, with day and night themes. A word with a picture is easier to remember.
+**Pictures for 3,057 of the 3,060 words and 15 place pictures** in one style, with day and night themes. A word with a picture is easier to remember.
 
 <p align="center">
   <img src="./assets/readme/pictures.png" width="100%" alt="20 word pictures: umbrella, lemon, bicycle, listen, ticket, wait and more">
 </p>
 
 <details>
-<summary>All 15 scenes</summary>
+<summary>All 15 place pictures</summary>
 <br>
 <p align="center">
-  <img src="./assets/readme/scenes.png" width="100%" alt="15 scenes of the city: Lost Property, a stairwell window, a card shop, a typewriter, a bus, Box 1681, receipts, an island, the harbour, a radio studio, a café, a kitchen, a station, a street, a bus stop">
+  <img src="./assets/readme/scenes.png" width="100%" alt="15 place pictures of the city: Lost Property, a stairwell window, a card shop, a typewriter, a bus, Box 1681, receipts, an island, the harbour, a radio studio, a café, a kitchen, a station, a street, a bus stop">
 </p>
 </details>
 
@@ -84,7 +87,7 @@ Words per level: A1 775, A2 876, B1 813, B2 596.
 1. Install Anki: [desktop](https://apps.ankiweb.net) and [Android](https://play.google.com/store/apps/details?id=com.ichi2.anki) are free, [iPhone and iPad](https://apps.apple.com/app/ankimobile-flashcards/id373493387) is paid. It has to be Anki itself: AnkiPro and AnkiApp are different apps, and the deck was not tested in them.
 2. Download [`Wordkeep-Oxford-3000.apkg`](https://github.com/phloya/wordkeep/releases/latest/download/Wordkeep-Oxford-3000.apkg) from [Releases](../../releases/latest). The link always gives the newest version; you do not need older ones. The same deck is also on [AnkiWeb Shared Decks](https://ankiweb.net/shared/info/261868786).
 3. Open the file in Anki:
-   - **Desktop:** double-click the file or choose File → Import. Enable *Import any deck presets* to get 15 new cards a day.
+   - **Desktop:** double-click the file or choose File → Import. Enable *Import any deck presets* to get 15 new cards a day, shown after your reviews.
    - **Android:** open the file and choose AnkiDroid.
    - **iPhone and iPad:** open the file in the Files app, tap Share and choose AnkiMobile.
 4. Study in order: new cards follow the story, do not shuffle them.
@@ -98,6 +101,7 @@ New versions come out in [Releases](../../releases); each one says what changed.
 
 Your progress stays, no duplicates appear, and new texts and pictures are added. Your number of new cards a day stays too.
 
+- **Moving to 2.0.** The card has changed: only the word on the front, and the story comes in scenes. Update as usual, over the old deck: your progress and review schedule stay as they are, and the card template updates by itself. If you edited the card template yourself, it will not update — copy the new one from [docs/template](./docs/template/) by hand, see [docs/customize.en.md](./docs/customize.en.md#if-the-template-did-not-update).
 - Installed the deck before 10 October 2026 (versions 1.0–1.1)? The story has been retold since then, and an update keeps the old order of new cards. Better delete the deck and install the newest version from scratch.
 - Cards you edited yourself are left alone: your edit stays, but the release's changes to that card do not arrive. The same goes for the card design if you changed the styling.
 - You can make a backup before updating: File → Create Backup.
@@ -116,14 +120,16 @@ Your progress stays, no duplicates appear, and new texts and pictures are added.
 
 ### New words per day
 
-The default is **15**. To change it:
+The default is **15**, with new cards shown after reviews. Any number works: a scene simply arrives once all its words are done. To change it:
 
 1. Click the gear next to the deck.
 2. Choose Options.
-3. Type the number in New cards/day.
+3. Under Daily Limits, type the number in New cards/day.
 4. Click Save.
 
 On a phone: Android — long-press the deck; iPhone — open the deck → Options.
+
+A day often ends in the middle of a scene. The scene then arrives the next day, after the rest of its words.
 
 ### Fix a word or a translation — on a computer
 
@@ -131,16 +137,16 @@ On a phone: Android — long-press the deck; iPhone — open the deck → Option
 2. Find the word with the search.
 3. Edit the field on the right; it saves right away.
 
-While studying it is faster: Edit or the `E` key. In the `Example` field change only the text: it also holds the picture and the scene.
+While studying it is faster: Edit or the `E` key. In the `Example` field change only the text: it also holds the picture and the place picture. On the last card of a scene this field also holds the fragments of the scene's earlier cards; they are copies, and editing them does not change those cards.
 
 ### Change how cards look — on a computer
 
 1. Tools → Manage Note Types.
 2. "Wordkeep (Oxford 3000)" → Cards….
-3. Styling → add a rule at the end. For example, only the word on the front:
+3. Styling → add a rule at the end. For example, to drop the «Ранее» line above a scene:
 
 ```css
-.front .ex-story { display: none; }
+.sc-prev { display: none !important; }
 ```
 
 More recipes: [docs/customize.en.md](./docs/customize.en.md). How the deck is built: [docs/how-it-works.en.md](./docs/how-it-works.en.md).
@@ -150,6 +156,13 @@ More recipes: [docs/customize.en.md](./docs/customize.en.md). How the deck is bu
 1. Create a free account at [ankiweb.net](https://ankiweb.net).
 2. On the computer, click Sync and sign in.
 3. On the phone, sign in to the same account and sync too.
+
+## Missed a few days
+
+Nothing is lost: overdue reviews simply wait for you. Only reviews pile up — new words do not; a day never brings more than your limit.
+
+- Do not delete the deck and do not use Reset Card on your cards (called Forget in older Anki versions): it wipes your progress and also puts cards back in their old places in the queue.
+- To come back gently, cap today's reviews: gear → Options → Daily Limits → the *Today only* tab → Maximum reviews/day — 40–50. Once that limit is reached, Anki shows no new cards either, so no new cards arrive until the backlog is cleared. This works as long as *New cards ignore review limit* is off — it is off by default; leave it off. The *Today only* limit lasts one day: if some backlog is left, set it again tomorrow.
 
 ## FAQ
 
@@ -161,6 +174,8 @@ More recipes: [docs/customize.en.md](./docs/customize.en.md). How the deck is bu
 | Hard (2) | you remembered with effort |
 | Good (3) | you remembered; the usual answer |
 | Easy (4) | you knew it at once |
+
+Every 3–6 words a scene appears under the answer: those words' fragments as one text, with «Ранее» above it and «Кто здесь» and «перевод» below. Read it, then rate the **word**, not how well you followed the scene. In reviews there is nothing to re-read: the scene simply sits below the answer. On such a card the ▶ button reads the whole scene.
 
 **A new version is out — will I lose my progress?** No: import the new file over the old one, see [How to update](#how-to-update).
 

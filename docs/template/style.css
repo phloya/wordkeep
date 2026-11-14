@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..600&family=PT+Mono&display=swap");
 /* ==== Wordkeep — "Rain from the Sea" (story_style.md) ====
    Each Anki card is one Tidewell memory card: warm grey mill paper fills the screen.
-   Front: the word alone, a lemon dash, and the filing tab of the fragment.
-   Back: word + translation (one heading), the scene painted on the card (feathered edges),
-   the filing tab on a hairline, the fragment with a lemon underline under the deck word,
-   and the Russian copy folded away in <details>.
-   Scenes are appended by tools\update_design.py as .scene-NAME { background-image }. */
+   Front: the word alone and a lemon dash ({{Example}} stays in the DOM, hidden, for the finale rule).
+   Back: word + translation (one heading), the word picture, the place painted on the card (feathered edges).
+   {{Example}} is rendered twice on the back:
+     .ex-main  picture + place always; the text panel only on scene-end cards (.strip-sc): the scene
+               (.sc-head, .sc-prev, the fragments .sc-f in order, then «Кто здесь» details.sc-who);
+     .ex-ctx   inside details.ctx «контекст»: the card's own fragment only (tab + text, no pictures);
+               on scene-end cards the whole details.ctx is hidden (cosmetic, :has()).
+   The Russian copy is folded away in details.ru-hint «перевод» (on scene-end cards: the whole scene).
+   Scene parts carry the HTML attribute `hidden` in the field; only descendant selectors un-hide them,
+   so old templates show a scene-end card as an ordinary one and nothing depends on :has().
+   No JavaScript. Scenes are appended by tools\update_design.py as .scene-NAME { background-image }. */
 
 /* ---------- tokens: day "08:10, Hill Park, rain from the sea" ---------- */
 .card {
@@ -143,15 +149,13 @@ html:has(> body.nightMode), html:has(> body.night_mode) { background: #161C22; }
 .doc-overheard .ex-story::before { content: "— "; }
 
 /* ============ FRONT: the question ============ */
-/* The learner reads the word with its fragment (the study flow since the start);
-   the scene is the answer's picture and appears only on the back.
-   Word-only front: add .front .ex-story to the display:none rule below. */
-.front .head { margin-top: max(24px, calc(16vh - 40px * var(--k))); text-align: center; }
+/* The word only: the meta line, the headword at about a third of the screen, the lemon dash.
+   The field stays in the DOM (not displayed) so the finale rule below can see .strip-finale. */
+.front .head { margin-top: max(24px, calc(30vh - 40px * var(--k))); text-align: center; }
 .front .word { font-size: clamp(40px, 12vw, 60px); font-size: calc(clamp(40px, 12vw, 60px) * var(--k)); }
 .front .word::after { content: ""; display: block; width: 28px; height: 3px; margin: 14px auto 0; border-radius: 2px; background: var(--lemon); }
 .card:has(.strip-finale) .front .word::after { background: var(--lid); }
-.front .art-panel, .front .story-meta { display: none; }
-.front .example { margin-top: calc(34px * var(--k)); }
+.front .example { display: none; }
 
 /* ============ BACK: the answer ============ */
 .back .meta { margin-bottom: 4px; }
@@ -173,27 +177,85 @@ hr#answer { display: block; height: 0; margin: 0; border: 0; scroll-margin-top: 
   mask-composite: intersect; }
 .back .text-panel { margin-top: 14px; }
 
+/* ---------- show / hide: ordinary vs scene-end card (descendant selectors only, no :has()) ---------- */
+/* ex-main: picture + place; its text panel only on scene-end cards, with the hidden scene parts opened */
+.ex-main .text-panel { display: none; }
+.ex-main .strip-sc .text-panel, .ex-main .strip-sc .sc, .ex-main .strip-sc .sc-who { display: block; }
+/* ex-ctx: the own fragment only; the picture is drawn once (by ex-main), the place too */
+.back .ex-ctx .wpic, .back .ex-ctx .art-panel, .ex-ctx .sc, .ex-ctx .sc-who { display: none; }
+/* cosmetic: a scene-end card already shows its fragment inside the scene */
+.back:has(.ex-main .strip-sc) .ctx { display: none; }
+
+/* ---------- the scene (scene-end cards) ---------- */
+.ex-main .strip-sc .text-panel { margin-top: 16px; padding-bottom: 4px; }
+.sc-head::before { content: attr(data-t); }
+.sc-head { font-family: var(--mono); font-size: calc(11px * var(--k)); line-height: 1.3; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.sc-prev::before { content: attr(data-t); }
+.sc-prev { margin-top: 6px; padding-bottom: 10px; border-bottom: 1px solid var(--rule);
+  font-family: var(--serif); font-size: calc(15.5px * var(--k)); line-height: 1.45; color: var(--ink-2);
+  font-variation-settings: "opsz" 14; }
+/* one continuous scene: fragments follow like paragraphs; the tab becomes a small marginal mark on a hairline */
+.sc-f { margin-top: calc(16px * var(--k)); }
+.sc-head + .sc-f { margin-top: calc(12px * var(--k)); }
+.sc-f .story-label { display: flex; padding: 0; gap: .45em; font-size: calc(10.5px * var(--k)); line-height: 1.2;
+  color: var(--ink-3); background: none; border: 0; border-radius: 0; }
+.sc-f .story-label::before { width: 10px; height: 10px; -webkit-mask-size: 10px 10px; mask-size: 10px 10px; }
+.sc-f .story-label .lbl { flex: 0 1 auto; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sc-f .story-label::after { position: static; flex: 1 1 24px; width: auto; min-width: 24px; align-self: center; }
+.sc-f .ex-story { margin-top: 5px; }
+/* the same source again: no tab, the text simply continues */
+.sc-f.sc-same { margin-top: calc(8px * var(--k)); }
+.sc-same > .story-label { display: none; }
+.sc-same .ex-story { margin-top: 0; }
+.ex-main .strip-sc .doc-radio .story-label::before { width: 5px; height: 5px; margin: 0 2px; }
+.sc-f.doc-box .story-label::after { border-top-width: 2px; } /* the lid line, lighter inside a scene */
+.sc-f.doc-news .story-label::after { border-top-width: 3px; }
+
+/* «Кто здесь»: name — one line, from data-n / data-t */
+.sc-who { margin-top: calc(16px * var(--k)); }
+.sc-who > summary::after { content: attr(data-t); }
+.who { margin: 2px 0 0 15px; font-family: var(--serif); font-size: calc(15.5px * var(--k)); line-height: 1.45; color: var(--ink-2); }
+.who::before { content: attr(data-n); font-weight: 600; color: var(--ink); }
+.who::after { content: " — " attr(data-t); }
+.sc-who[open] > summary { padding-bottom: 2px; }
+
 /* the word picture (section 8): back only, to the right of the word + translation heading */
 .wpic { display: none; }
 .back { position: relative; }
 .back .wpic { display: block; position: absolute; z-index: 1; right: 16px; top: calc(14px * var(--k) + 30px);
   width: var(--wp); height: var(--wp); object-fit: contain; filter: var(--scene-fx); }
-.back:has(.wpic) .word, .back:has(.wpic) .ru { margin-right: calc(var(--wp) + 10px); }
-.back:has(.wpic) .ru { min-height: calc(var(--wp) - 72px * var(--k)); } /* the scene starts below the picture */
+/* room for the picture is kept by default (safe without :has()); cards without a picture take it back */
+.back .word, .back .ru { margin-right: calc(var(--wp) + 10px); }
+.back .ru { min-height: calc(var(--wp) - 72px * var(--k)); } /* the scene starts below the picture */
+.back:not(:has(.wpic)) .word, .back:not(:has(.wpic)) .ru { margin-right: 0; min-height: 0; }
 
 .ru, .back .art-panel, .back .wpic { animation: answer-in .18s ease-out both; }
 @keyframes answer-in { from { opacity: 0; } }
 
-/* the Russian copy: the back of the card, folded away */
+/* folded parts: «контекст» (the own fragment), «перевод» (the Russian copy), «Кто здесь» */
+.ctx { margin-top: 16px; }
 .ru-hint { margin-top: 20px; }
-.ru-hint > summary { display: inline-flex; align-items: center; gap: .6em; padding: 6px 0; cursor: pointer; list-style: none;
+.ctx + .ru-hint { margin-top: 2px; }
+.ctx[open] + .ru-hint { margin-top: 12px; }
+.ctx > summary, .ru-hint > summary, .sc-who > summary { display: inline-flex; align-items: center; gap: .6em; padding: 6px 0;
+  cursor: pointer; list-style: none;
   user-select: none; -webkit-user-select: none; font-family: var(--mono); font-size: calc(11.5px * var(--k));
   letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); -webkit-tap-highlight-color: transparent; }
-.ru-hint > summary::-webkit-details-marker { display: none; }
-.ru-hint > summary::before { content: ""; width: 0; height: 0; border-style: solid; border-width: 4.5px 0 4.5px 6.5px;
+.ctx > summary::-webkit-details-marker, .ru-hint > summary::-webkit-details-marker,
+.sc-who > summary::-webkit-details-marker { display: none; }
+.ctx > summary::before, .ru-hint > summary::before, .sc-who > summary::before { content: ""; width: 0; height: 0;
+  border-style: solid; border-width: 4.5px 0 4.5px 6.5px;
   border-color: transparent transparent transparent currentColor; transition: transform .15s; }
-.ru-hint[open] > summary::before { transform: rotate(90deg); }
+.ctx[open] > summary::before, .ru-hint[open] > summary::before, .sc-who[open] > summary::before { transform: rotate(90deg); }
+.ex-ctx { margin-top: 2px; }
+.back .ex-ctx .text-panel { margin-top: 10px; }
 .example-ru { margin-top: 6px; }
+/* the Russian scene: all its fragments, same light tabs */
+.example-ru .strip-sc .sc { display: block; }
+.example-ru .sc-f { margin-top: 12px; }
+.example-ru .sc-f:first-child { margin-top: 0; }
+.example-ru .sc-f.sc-same { margin-top: 6px; }
 .example-ru .art-panel { display: none; }
 .example-ru .ex-story { font-size: calc(17.5px * var(--k)); line-height: 1.5; color: var(--ink-2); font-style: normal;
   font-family: var(--serif); }
@@ -203,8 +265,8 @@ hr#answer { display: block; height: 0; margin: 0; border: 0; scroll-margin-top: 
 .example-ru .ex-story b { background-image: linear-gradient(var(--lemon-f), var(--lemon-f)); background-size: 100% .45em; }
 
 @media (prefers-reduced-motion: reduce) {
-  .ru, .back .art-panel { animation: none; }
-  .ru-hint > summary::before { transition: none; }
+  .ru, .back .art-panel, .back .wpic { animation: none; }
+  .ctx > summary::before, .ru-hint > summary::before, .sc-who > summary::before { transition: none; }
 }
 
 /* ---------- text-to-speech: a small quiet button at the right of the meta line ---------- */
